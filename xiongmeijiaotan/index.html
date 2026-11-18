@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>兄妹蕉谈 | 兄妹日常影像社区 | 温暖相伴记录真实</title>
+  <meta name="description" content="兄妹蕉谈官方网站，深耕兄妹日常与家庭影像的原创内容社区，提供高清视频、创作者故事与企业动态，打造值得信赖的温暖内容生态。">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+    }
+    :root {
+      --amber: #d97706;
+      --amber-deep: #b45309;
+      --amber-light: #fef3c7;
+      --cream: #fffbeb;
+      --warm-white: #fffcf8;
+      --text-dark: #1e293b;
+      --text-mid: #475569;
+      --text-light: #64748b;
+      --border-soft: #f1e7d9;
+      --shadow-sm: 0 4px 12px rgba(217, 119, 6, 0.08);
+      --shadow-md: 0 8px 24px rgba(217, 119, 6, 0.12);
+      --radius-card: 20px;
+      --radius-sm: 12px;
+      --header-height: 72px;
+      --announce-height: 44px;
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + var(--announce-height) + 12px);
+    }
+    body {
+      background: var(--warm-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-top: calc(var(--header-height) + var(--announce-height));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 252, 248, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    }
+    .announce-bar {
+      height: var(--announce-height);
+      background: linear-gradient(90deg, #b45309, #d97706, #f59e0b);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 0.88rem;
+      letter-spacing: 0.3px;
+    }
+    .announce-track {
+      display: flex;
+      gap: 4rem;
+      white-space: nowrap;
+      animation: scrollAnnounce 28s linear infinite;
+      padding-left: 1rem;
+    }
+    .announce-track span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .announce-track span::before {
+      content: "◆";
+      font-size: 0.6rem;
+      opacity: 0.9;
+    }
+    @keyframes scrollAnnounce {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .header-main {
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(145deg, #f59e0b, #d97706);
+      border-radius: 12px 4px 12px 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--amber); }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border-soft);
+      border-radius: 40px;
+      padding: 0.35rem 0.35rem 0.35rem 1rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .search-box:focus-within {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 0.9rem;
+      width: 140px;
+      color: var(--text-dark);
+    }
+    .search-box input::placeholder { color: #a1a1aa; }
+    .search-btn {
+      background: var(--amber);
+      border: none;
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .search-btn:hover { background: var(--amber-deep); }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      line-height: 1;
+    }
+    .main-content {
+      flex: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem;
+      width: 100%;
+    }
+    .section {
+      margin-bottom: 4.5rem;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-title::before {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 28px;
+      background: linear-gradient(180deg, #f59e0b, #d97706);
+      border-radius: 4px;
+    }
+    .section-sub {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      font-size: 0.98rem;
+      padding-left: 1.1rem;
+    }
+    /* 首屏 */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+      background: linear-gradient(135deg, #fff7ed, #fffbeb);
+      border-radius: 32px;
+      padding: 2.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-text h1 {
+      font-size: 2.6rem;
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #3b2a1a;
+    }
+    .hero-text h1 .highlight {
+      background: linear-gradient(145deg, #f59e0b, #b45309);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-mid);
+      margin-bottom: 1.8rem;
+      max-width: 95%;
+      line-height: 1.75;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-item .num {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--amber-deep);
+      line-height: 1.2;
+    }
+    .stat-item .label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(145deg, #f59e0b, #d97706);
+      color: #fff;
+      border: none;
+      border-radius: 40px;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--amber);
+      color: var(--amber-deep);
+      border-radius: 40px;
+      padding: 0.75rem 1.8rem;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-outline:hover { background: var(--amber); color: #fff; }
+    .hero-visual {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #fde68a;
+      position: relative;
+      aspect-ratio: 16/10;
+    }
+    .hero-visual svg { display: block; width: 100%; height: 100%; object-fit: cover; }
+    /* 视频卡片 */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+    .video-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .video-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .card-cover {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #fef3c7;
+    }
+    .card-cover svg { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .play-icon {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--amber-deep);
+      font-size: 1rem;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      pointer-events: none;
+    }
+    .card-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(217, 119, 6, 0.92);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      letter-spacing: 0.4px;
+      backdrop-filter: blur(4px);
+    }
+    .card-body {
+      padding: 1.1rem 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.02rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.6rem;
+      border-top: 1px dashed #f0e4d4;
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .card-author {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .avatar-sm {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fbbf24, #d97706);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .card-actions {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      color: var(--text-light);
+      font-size: 0.78rem;
+      padding: 0.2rem;
+      transition: color 0.2s;
+    }
+    .action-btn:hover { color: var(--amber); }
+    .action-btn.liked { color: #dc2626; }
+    .action-btn.favorited { color: #e11d48; }
+    .action-btn svg { width: 15px; height: 15px; fill: currentColor; }
+    /* 焦点视频区 */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+    }
+    .focus-card-large {
+      grid-column: span 1;
+      background: #fff;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .focus-card-large:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .focus-card-large .card-cover { aspect-ratio: 16/9; position: relative; }
+    .focus-info {
+      padding: 1.2rem 1.4rem 1.4rem;
+    }
+    .focus-info .card-title { font-size: 1.15rem; }
+    .focus-meta {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 0.6rem;
+    }
+    /* 创作者矩阵 */
+    .creator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.8rem;
+    }
+    .creator-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 1.6rem 1.2rem 1.4rem;
+      text-align: center;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .creator-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .avatar-lg {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin: 0 auto 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(145deg, #f59e0b, #b45309);
+      box-shadow: 0 4px 12px rgba(217,119,6,0.3);
+    }
+    .creator-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+    .creator-field {
+      font-size: 0.78rem;
+      color: var(--amber-deep);
+      background: var(--amber-light);
+      display: inline-block;
+      padding: 0.15rem 0.8rem;
+      border-radius: 30px;
+      margin-bottom: 0.7rem;
+    }
+    .creator-stats {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+    }
+    .creator-bio {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+    /* 专题 */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+    .topic-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .topic-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .topic-cover {
+      aspect-ratio: 16/9;
+      background: #fef3c7;
+      position: relative;
+      overflow: hidden;
+    }
+    .topic-cover svg { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .topic-body { padding: 1.2rem; }
+    .topic-body h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+    .topic-body p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.7rem; }
+    .topic-status {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-light);
+    }
+    .status-badge {
+      background: #ecfdf5;
+      color: #059669;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+    /* 企业动态 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .news-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      padding: 1.1rem 1.4rem;
+      border: 1px solid var(--border-soft);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .news-item:hover { background: #fffbf3; border-color: #fcd34d; }
+    .news-date {
+      color: var(--amber-deep);
+      font-weight: 700;
+      font-size: 0.82rem;
+      min-width: 72px;
+    }
+    .news-content { flex: 1; }
+    .news-content h3 { font-size: 0.98rem; margin-bottom: 0.2rem; }
+    .news-content p { font-size: 0.85rem; color: var(--text-light); }
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    details {
+      background: #fff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.3rem;
+      transition: background 0.2s;
+    }
+    details[open] { background: #fffbf3; border-color: #fcd34d; }
+    summary {
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-dark);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: var(--amber);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+    details[open] summary::after { content: "−"; }
+    details p {
+      margin-top: 0.7rem;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    /* 互动区 */
+    .interact-band {
+      background: linear-gradient(135deg, #ffedd5, #fef3c7);
+      border-radius: var(--radius-card);
+      padding: 2.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border: 1px solid #fed7aa;
+    }
+    .interact-band h2 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .interact-band p { color: var(--text-mid); font-size: 0.95rem; }
+    .interact-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-dark {
+      background: var(--text-dark);
+      color: #fff;
+      border: none;
+      border-radius: 40px;
+      padding: 0.7rem 1.8rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: #0f172a; }
+    /* 页脚 */
+    .site-footer {
+      background: #2d1f0e;
+      color: #e7d5c0;
+      padding: 3rem 2rem 1.8rem;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .footer-brand h3 { color: #fbbf24; font-size: 1.3rem; margin-bottom: 0.8rem; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.8; opacity: 0.8; }
+    .footer-col h4 { color: #fcd34d; font-size: 0.95rem; margin-bottom: 1rem; }
+    .footer-col a { display: block; color: #c9b39a; text-decoration: none; font-size: 0.82rem; margin-bottom: 0.5rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #fcd34d; }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid #4a3a28;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      opacity: 0.7;
+    }
+    /* toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--text-dark);
+      color: #fff;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      font-size: 0.88rem;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      z-index: 999;
+      pointer-events: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    /* 回顶 */
+    .back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--amber);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(217,119,6,0.4);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(10px);
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-top.visible { opacity: 1; transform: translateY(0); }
+    .back-top:hover { background: var(--amber-deep); }
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .header-main { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: calc(var(--header-height) + var(--announce-height));
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border-soft);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+      }
+      .mobile-menu-btn { display: block; }
+      .main-content { padding: 1.2rem; }
+      .hero { padding: 1.5rem; }
+      .hero-text h1 { font-size: 1.9rem; }
+      .focus-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .search-box input { width: 90px; }
+      .announce-bar { font-size: 0.78rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    }
+    @media (max-width: 480px) {
+      .video-grid { grid-template-columns: 1fr; }
+      .creator-grid { grid-template-columns: 1fr 1fr; }
+      .hero-text h1 { font-size: 1.6rem; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="announce-bar">
+      <div class="announce-track">
+        <span>「兄妹蕉谈」官网正式上线：兄妹日常纪实专题《一起长大》更新至第12期</span>
+        <span>创作者招募计划启动，上传作品赢取首页推荐位</span>
+        <span>品牌开放日报名中：走进兄妹蕉谈内容工作室</span>
+        <span>「兄妹蕉谈」官网正式上线：兄妹日常纪实专题《一起长大》更新至第12期</span>
+        <span>创作者招募计划启动，上传作品赢取首页推荐位</span>
+        <span>品牌开放日报名中：走进兄妹蕉谈内容工作室</span>
+      </div>
+    </div>
+    <div class="header-main">
+      <a href="#" class="logo">
+        <span class="logo-mark">蕉</span>
+        兄妹蕉谈
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">首页</a></li>
+          <li><a href="#focus">焦点视频</a></li>
+          <li><a href="#videos">热门</a></li>
+          <li><a href="#creators">创作者</a></li>
+          <li><a href="#topics">专题</a></li>
+          <li><a href="#news">企业动态</a></li>
+          <li><a href="#faq">帮助</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="搜索视频、创作者…" aria-label="搜索">
+          <button class="search-btn" id="searchBtn">搜索</button>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- 首屏 -->
+    <section id="hero" class="hero">
+      <div class="hero-text">
+        <h1><span class="highlight">兄妹蕉谈</span>官方网站</h1>
+        <p class="hero-desc">
+          作为国内领先的家庭日常影像品牌，兄妹蕉谈致力于用真实镜头记录兄妹成长与家庭温度。
+          我们搭建高品质原创内容生态，汇聚专业创作者、行业伙伴与千万用户，持续输出有温度、
+          有品质的陪伴式视频。从日常趣事到深度访谈，从城市探索到生活美学，兄妹蕉谈始终
+          坚持用户至上、匠心创作，让每一帧画面都值得信赖。
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="num" data-count="1280">1280+</div>
+            <div class="label">原创视频</div>
+          </div>
+          <div class="stat-item">
+            <div class="num" data-count="86">86万</div>
+            <div class="label">社区用户</div>
+          </div>
+          <div class="stat-item">
+            <div class="num" data-count="32">32位</div>
+            <div class="label">签约创作者</div>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#videos" class="btn-primary">探索精品内容</a>
+          <a href="#contact" class="btn-outline">成为创作者</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="兄妹蕉谈品牌主视觉：暖色背景下兄妹俩在香蕉树旁玩耍">
+          <defs>
+            <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fef3c7"/>
+              <stop offset="100%" stop-color="#fde68a"/>
+            </linearGradient>
+            <linearGradient id="leaf" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#16a34a"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="400" fill="url(#heroBg)"/>
+          <circle cx="520" cy="80" r="50" fill="#fbbf24" opacity="0.5"/>
+          <circle cx="520" cy="80" r="30" fill="#f59e0b" opacity="0.7"/>
+          <path d="M80 320 Q150 200 220 300 Q280 380 360 310 Q430 250 500 330 Q560 390 620 320 L620 400 L80 400 Z" fill="#b45309" opacity="0.15"/>
+          <path d="M60 340 Q130 250 200 330 Q270 400 350 330 Q430 260 520 350 Q580 400 640 340 L640 400 L60 400 Z" fill="#d97706" opacity="0.2"/>
+          <!-- 香蕉树 -->
+          <rect x="460" y="200" width="14" height="160" fill="#92400e" rx="4"/>
+          <ellipse cx="467" cy="200" rx="80" ry="26" fill="url(#leaf)" opacity="0.9"/>
+          <ellipse cx="430" cy="190" rx="60" ry="22" fill="url(#leaf)" opacity="0.8"/>
+          <ellipse cx="510" cy="195" rx="55" ry="20" fill="url(#leaf)" opacity="0.85"/>
+          <ellipse cx="450" cy="215" rx="40" ry="14" fill="#facc15" opacity="0.7"/>
+          <!-- 人物 -->
+          <circle cx="250" cy="220" r="22" fill="#fcd34d"/>
+          <rect x="238" y="242" width="24" height="55" rx="10" fill="#f59e0b"/>
+          <circle cx="310" cy="235" r="18" fill="#fde68a"/>
+          <rect x="300" y="253" width="20" height="45" rx="9" fill="#fbbf24"/>
+          <path d="M230 300 L250 300 L250 320 L230 320 Z" fill="#b45309" opacity="0.3"/>
+          <path d="M290 305 L310 305 L310 325 L290 325 Z" fill="#b45309" opacity="0.3"/>
+          <text x="320" y="370" text-anchor="middle" font-size="18" fill="#78350f" font-weight="600" opacity="0.7">兄妹蕉谈 · 温暖相伴</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 焦点视频 -->
+    <section id="focus" class="section">
+      <h2 class="section-title">焦点视频</h2>
+      <p class="section-sub">本期精选 · 兄妹日常与成长故事</p>
+      <div class="focus-grid">
+        <div class="focus-card-large">
+          <div class="card-cover">
+            <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="兄妹蕉谈焦点视频封面：一起长大的第100天，兄妹在阳台浇花">
+              <defs><linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient></defs>
+              <rect width="600" height="340" fill="url(#f1)"/>
+              <circle cx="480" cy="70" r="45" fill="#f59e0b" opacity="0.6"/>
+              <rect x="100" y="180" width="120" height="100" rx="10" fill="#d97706" opacity="0.2"/>
+              <rect x="380" y="160" width="130" height="120" rx="12" fill="#b45309" opacity="0.15"/>
+              <path d="M200 280 Q300 200 400 280" stroke="#16a34a" stroke-width="6" fill="none" opacity="0.6"/>
+              <circle cx="240" cy="180" r="28" fill="#fcd34d"/>
+              <circle cx="310" cy="190" r="24" fill="#fde68a"/>
+              <text x="300" y="310" text-anchor="middle" font-size="16" fill="#78350f" font-weight="600" opacity="0.8">一起长大 · 第100天</text>
+            </svg>
+            <div class="card-tag">焦点推荐</div>
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="focus-info">
+            <div class="card-title">一起长大的第100天：兄妹阳台浇花记</div>
+            <div class="focus-meta">
+              <span>兄妹蕉谈</span>
+              <span>2025-03-12</span>
+              <span>12.8万次播放</span>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card-large">
+          <div class="card-cover">
+            <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="兄妹蕉谈焦点视频封面：深夜厨房里的兄妹蛋炒饭对决">
+              <defs><linearGradient id="f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient></defs>
+              <rect width="600" height="340" fill="url(#f2)"/>
+              <rect x="80" y="120" width="180" height="140" rx="16" fill="#f59e0b" opacity="0.2"/>
+              <rect x="340" y="130" width="180" height="140" rx="16" fill="#d97706" opacity="0.2"/>
+              <circle cx="170" cy="190" r="40" fill="#fbbf24" opacity="0.8"/>
+              <circle cx="430" cy="200" r="36" fill="#f97316" opacity="0.7"/>
+              <text x="300" y="310" text-anchor="middle" font-size="16" fill="#78350f" font-weight="600" opacity="0.8">深夜厨房 · 蛋炒饭对决</text>
+            </svg>
+            <div class="card-tag">热门</div>
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="focus-info">
+            <div class="card-title">深夜厨房：兄妹蛋炒饭对决，谁赢了？</div>
+            <div class="focus-meta">
+              <span>蕉妹食谱</span>
+              <span>2025-03-08</span>
+              <span>9.6万次播放</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 热门视频流 -->
+    <section id="videos" class="section">
+      <h2 class="section-title">热门视频流</h2>
+      <p class="section-sub">社区精选 · 持续更新中</p>
+      <div class="video-grid" id="videoGrid">
+        <!-- 由 JS 动态渲染 9 张卡片，保证内容多样 -->
+      </div>
+    </section>
+
+    <!-- 创作者矩阵 -->
+    <section id="creators" class="section">
+      <h2 class="section-title">创作者矩阵</h2>
+      <p class="section-sub">平台签约创作者 · 多元内容生态</p>
+      <div class="creator-grid" id="creatorGrid">
+        <!-- JS 渲染 -->
+      </div>
+    </section>
+
+    <!-- 专题企划 -->
+    <section id="topics" class="section">
+      <h2 class="section-title">专题企划</h2>
+      <p class="section-sub">深度内容 · 品牌故事</p>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-cover">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="专题封面：兄妹成长记录系列">
+              <rect width="400" height="220" fill="#fef3c7"/>
+              <circle cx="200" cy="110" r="60" fill="#fbbf24" opacity="0.5"/>
+              <circle cx="200" cy="110" r="35" fill="#f59e0b" opacity="0.7"/>
+              <text x="200" y="200" text-anchor="middle" font-size="14" fill="#78350f" font-weight="600">成长记录</text>
+            </svg>
+          </div>
+          <div class="topic-body">
+            <h3>成长记录：兄妹的100个第一次</h3>
+            <p>从第一次开口叫哥哥，到第一次一起上台表演，我们记录下每一个珍贵瞬间。</p>
+            <div class="topic-status"><span class="status-badge">更新中</span><span>共12期</span></div>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-cover">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="专题封面：家庭厨房治愈料理">
+              <rect width="400" height="220" fill="#ffedd5"/>
+              <ellipse cx="200" cy="140" rx="120" ry="40" fill="#f97316" opacity="0.25"/>
+              <circle cx="150" cy="120" r="30" fill="#fbbf24" opacity="0.7"/>
+              <circle cx="250" cy="130" r="25" fill="#f59e0b" opacity="0.6"/>
+              <text x="200" y="200" text-anchor="middle" font-size="14" fill="#78350f" font-weight="600">治愈料理</text>
+            </svg>
+          </div>
+          <div class="topic-body">
+            <h3>治愈料理：兄妹的周末厨房</h3>
+            <p>每周一道简单家常菜，兄妹配合完成，用食物传递温暖。</p>
+            <div class="topic-status"><span class="status-badge">已完结</span><span>共24期</span></div>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-cover">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="专题封面：城市探索兄妹骑行记">
+              <rect width="400" height="220" fill="#ecfdf5"/>
+              <path d="M50 180 Q200 80 350 180" stroke="#16a34a" stroke-width="8" fill="none" opacity="0.5"/>
+              <circle cx="120" cy="160" r="20" fill="#f59e0b" opacity="0.7"/>
+              <circle cx="280" cy="160" r="20" fill="#fbbf24" opacity="0.7"/>
+              <text x="200" y="210" text-anchor="middle" font-size="14" fill="#064e3b" font-weight="600">城市探索</text>
+            </svg>
+          </div>
+          <div class="topic-body">
+            <h3>城市探索：兄妹骑行日记</h3>
+            <p>用镜头丈量城市，记录街角故事与在地文化，感受生活真实肌理。</p>
+            <div class="topic-status"><span class="status-badge">更新中</span><span>共8期</span></div>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-cover">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="专题封面：幕后花絮创作手记">
+              <rect width="400" height="220" fill="#f5f3ff"/>
+              <rect x="120" y="60" width="160" height="100" rx="12" fill="#8b5cf6" opacity="0.2"/>
+              <circle cx="200" cy="110" r="30" fill="#a78bfa" opacity="0.6"/>
+              <text x="200" y="200" text-anchor="middle" font-size="14" fill="#4c1d95" font-weight="600">创作幕后</text>
+            </svg>
+          </div>
+          <div class="topic-body">
+            <h3>创作幕后：兄妹蕉谈拍摄手记</h3>
+            <p>从脚本到剪辑，分享每一支视频背后的故事与团队心得。</p>
+            <div class="topic-status"><span class="status-badge">更新中</span><span>共6期</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 企业动态 -->
+    <section id="news" class="section">
+      <h2 class="section-title">企业动态</h2>
+      <p class="section-sub">官方发布 · 品牌资讯</p>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">2025-03-15</span>
+          <div class="news-content">
+            <h3>兄妹蕉谈「创作者扶持计划」正式启动</h3>
+            <p>面向全网招募家庭生活类创作者，提供流量扶持与专业培训，共建高品质内容生态。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025-03-10</span>
+          <div class="news-content">
+            <h3>品牌开放日报名开启：走进兄妹蕉谈工作室</h3>
+            <p>3月30日，邀请社区用户与创作者实地探访，了解视频制作全流程，限额30名。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025-03-05</span>
+          <div class="news-content">
+            <h3>兄妹蕉谈与多个亲子品牌达成战略合作</h3>
+            <p>共同探索家庭场景内容创新，为用户带来更丰富的精品视频与互动体验。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025-02-28</span>
+          <div class="news-content">
+            <h3>社区投稿功能升级：支持高清视频一键上传</h3>
+            <p>简化创作流程，提升上传速度，并为优秀作品提供首页推荐位。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <h2 class="section-title">常见问题</h2>
+      <p class="section-sub">帮助中心 · 快速了解兄妹蕉谈</p>
+      <div class="faq-list">
+        <details>
+          <summary>如何向兄妹蕉谈投稿？</summary>
+          <p>您可以通过官网首页的“成为创作者”入口提交作品，或发送作品链接至官方邮箱。我们会在3个工作日内回复审核结果，优秀作品将获得首页推荐与创作激励。</p>
+        </details>
+        <details>
+          <summary>投稿内容有什么要求？</summary>
+          <p>内容需为原创，画质清晰（建议1080P及以上），时长建议1-15分钟。题材围绕家庭日常、兄妹成长、生活记录等方向，禁止搬运与低俗内容。</p>
+        </details>
+        <details>
+          <summary>视频封面和标题有什么建议？</summary>
+          <p>封面建议使用16:9比例，画面干净、主题突出；标题需准确概括内容，避免夸张误导。平台也提供AI标题建议工具，欢迎使用。</p>
+        </details>
+        <details>
+          <summary>如何成为签约创作者？</summary>
+          <p>持续发布优质内容并达到一定粉丝量后，官方将主动联系。签约创作者享有流量扶持、商业合作机会及专业培训等权益。</p>
+        </details>
+        <details>
+          <summary>平台是否支持商业合作？</summary>
+          <p>支持。品牌方可联系商务邮箱，我们提供定制视频、专题企划、内容植入等多种合作形式，坚持品质与口碑优先。</p>
+        </details>
+        <details>
+          <summary>如何联系官方？</summary>
+          <p>可通过页脚联系方式或发送邮件至官方邮箱，工作日9:00-18:00在线。也欢迎关注官方社区账号获取最新动态。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 互动区 -->
+    <section id="contact" class="section">
+      <div class="interact-band">
+        <div>
+          <h2>加入兄妹蕉谈社区</h2>
+          <p>上传你的家庭影像，分享温暖瞬间，与86万用户一起记录真实生活。</p>
+        </div>
+        <div class="interact-actions">
+          <button class="btn-primary" id="uploadBtn">立即投稿</button>
+          <button class="btn-dark" id="shareBtn">分享官网</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>兄妹蕉谈</h3>
+        <p>兄妹蕉谈官方网站 · 家庭日常影像品牌。我们坚持原创、正版、高清的内容标准，深耕家庭生活垂直领域，持续运营温暖有品质的视频社区，陪伴每一个家庭成长。</p>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="#hero">首页</a>
+        <a href="#focus">焦点视频</a>
+        <a href="#videos">热门内容</a>
+        <a href="#creators">创作者</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="#topics">专题企划</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助中心</a>
+        <a href="#contact">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4>关注</h4>
+        <a href="#">微信公众号</a>
+        <a href="#">微博</a>
+        <a href="#">小红书</a>
+        <a href="#">B站</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 兄妹蕉谈 版权所有 · 持续运营中</span>
+      <span>备案号占位：京ICP备2025XXXX号</span>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    (function(){
+      // 视频数据
+      var videoData = [
+        { title: "兄妹厨房：自制香蕉松饼的翻车现场", desc: "本来想做完美松饼，结果变成了抽象艺术，但味道意外不错。", author: "蕉妹食谱", tag: "美食", plays: "8.2万", avatar: "蕉", color: "#f59e0b" },
+        { title: "哥哥教我骑自行车：摔了三次终于学会", desc: "成长就是一次次跌倒又爬起，妹妹的坚持让人感动。", author: "兄妹蕉谈", tag: "成长", plays: "11.5万", avatar: "哥", color: "#d97706" },
+        { title: "城市漫步：兄妹俩的胡同探店日记", desc: "藏在老城区的糖水铺，香蕉牛奶是招牌，兄妹吃得很满足。", author: "蕉游地图", tag: "城市", plays: "6.8万", avatar: "蕉", color: "#b45309" },
+        { title: "深夜谈心：哥哥给妹妹的一封信", desc: "有些话说不出口，就用视频记录下来。真实的情感最动人。", author: "兄妹蕉谈", tag: "情感", plays: "15.3万", avatar: "哥", color: "#f59e0b" },
+        { title: "兄妹挑战：用香蕉做七道菜", desc: "从香蕉派到香蕉咖喱，创意无限，结果出乎意料。", author: "蕉妹食谱", tag: "挑战", plays: "9.1万", avatar: "蕉", color: "#d97706" },
+        { title: "带妹妹逛旧货市场：淘到绝版胶片机", desc: "周末的惊喜发现，兄妹俩一起研究胶片摄影的乐趣。", author: "蕉游地图", tag: "生活", plays: "5.6万", avatar: "蕉", color: "#b45309" },
+        { title: "哥哥的篮球训练日：妹妹当拉拉队", desc: "球场上的汗水与场边的加油声，兄妹默契满分。", author: "兄妹蕉谈", tag: "运动", plays: "7.9万", avatar: "哥", color: "#f59e0b" },
+        { title: "家庭读书会：兄妹共读一本绘本", desc: "每周一次的家庭阅读时间，妹妹读图，哥哥读字，温馨日常。", author: "蕉妹书单", tag: "阅读", plays: "4.2万", avatar: "蕉", color: "#d97706" },
+        { title: "兄妹DIY：用纸箱做一只香蕉猫", desc: "手工课时间，从设计到剪裁，兄妹配合完成创意作品。", author: "蕉妹手工", tag: "手作", plays: "6.5万", avatar: "蕉", color: "#b45309" }
+      ];
+
+      // 创作者数据
+      var creatorData = [
+        { name: "兄妹蕉谈", field: "家庭日常", works: "328", fans: "21.8万", bio: "兄妹二人组，记录成长与陪伴，坚持真实温暖的影像表达。", avatar: "哥" },
+        { name: "蕉妹食谱", field: "美食烹饪", works: "156", fans: "12.4万", bio: "爱做饭的妹妹，分享简单治愈的家常料理和厨房趣事。", avatar: "蕉" },
+        { name: "蕉游地图", field: "城市探索", works: "98", fans: "8.7万", bio: "用镜头发现城市角落的温暖，专注在地文化与生活记录。", avatar: "蕉" },
+        { name: "蕉爸手记", field: "亲子成长", works: "74", fans: "6.2万", bio: "爸爸视角记录兄妹成长，分享育儿心得与家庭故事。", avatar: "爸" },
+        { name: "蕉妹手工", field: "手作DIY", works: "63", fans: "4.9万", bio: "创意手工达人，擅长纸艺与旧物改造，让生活更有趣。", avatar: "蕉" }
+      ];
+
+      // 渲染视频卡片
+      function renderVideos() {
+        var grid = document.getElementById('videoGrid');
+        if (!grid) return;
+        var html = '';
+        videoData.forEach(function(v, idx) {
+          html += '<div class="video-card">' +
+            '<div class="card-cover">' +
+              getCoverSvg(idx, v) +
+              '<div class="card-tag">' + v.tag + '</div>' +
+              '<div class="play-icon">▶</div>' +
+            '</div>' +
+            '<div class="card-body">' +
+              '<div class="card-title">' + v.title + '</div>' +
+              '<div class="card-desc">' + v.desc + '</div>' +
+              '<div class="card-meta">' +
+                '<div class="card-author">' +
+                  '<span class="avatar-sm" style="background:linear-gradient(145deg,' + v.color + ',#92400e)">' + v.avatar + '</span>' +
+                  '<span>' + v.author + '</span>' +
+                '</div>' +
+                '<div class="card-actions">' +
+                  '<button class="action-btn like-btn" data-liked="false">' +
+                    '<svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>' +
+                    '<span class="like-count">' + Math.floor(Math.random()*900+100) + '</span>' +
+                  '</button>' +
+                  '<button class="action-btn fav-btn" data-fav="false">' +
+                    '<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>' +
+                  '</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        });
+        grid.innerHTML = html;
+
+        // 点赞/收藏事件
+        grid.addEventListener('click', function(e) {
+          var likeBtn = e.target.closest('.like-btn');
+          if (likeBtn) {
+            var liked = likeBtn.getAttribute('data-liked') === 'true';
+            var countSpan = likeBtn.querySelector('.like-count');
+            var current = parseInt(countSpan.innerText);
+            if (liked) {
+              countSpan.innerText = current - 1;
+              likeBtn.classList.remove('liked');
+              likeBtn.setAttribute('data-liked', 'false');
+            } else {
+              countSpan.innerText = current + 1;
+              likeBtn.classList.add('liked');
+              likeBtn.setAttribute('data-liked', 'true');
+            }
+            return;
+          }
+          var favBtn = e.target.closest('.fav-btn');
+          if (favBtn) {
+            var faved = favBtn.getAttribute('data-fav') === 'true';
+            if (faved) {
+              favBtn.classList.remove('favorited');
+              favBtn.setAttribute('data-fav', 'false');
+              showToast('已取消收藏');
+            } else {
+              favBtn.classList.add('favorited');
+              favBtn.setAttribute('data-fav', 'true');
+              showToast('已收藏到个人列表');
+            }
+          }
+        });
+      }
+
+      // 封面SVG生成器（不同构图与配色）
+      function getCoverSvg(idx, v) {
+        var palettes = [
+          ['#fef3c7','#fde68a','#f59e0b'],
+          ['#ffedd5','#fed7aa','#ea580c'],
+          ['#ecfdf5','#d1fae5','#059669'],
+          ['#f5f3ff','#ede9fe','#7c3aed'],
+          ['#fce7f3','#fbcfe8','#db2777'],
+          ['#e0f2fe','#bae6fd','#0284c7'],
+          ['#fef9c3','#fef08a','#ca8a04'],
+          ['#f3e8ff','#e9d5ff','#9333ea'],
+          ['#fff7ed','#ffedd5','#c2410c'],
+          ['#f0fdf4','#dcfce7','#16a34a']
+        ];
+        var p = palettes[idx % palettes.length];
+        var shapes = [
+          '<circle cx="200" cy="110" r="55" fill="' + p[2] + '" opacity="0.25"/><circle cx="200" cy="110" r="30" fill="' + p[2] + '" opacity="0.5"/><rect x="70" y="150" width="80" height="60" rx="8" fill="' + p[2] + '" opacity="0.15"/><rect x="280" y="140" width="70" height="70" rx="8" fill="' + p[2] + '" opacity="0.15"/>',
+          '<rect x="100" y="60" width="220" height="120" rx="16" fill="' + p[2] + '" opacity="0.15"/><circle cx="210" cy="120" r="40" fill="' + p[2] + '" opacity="0.3"/><circle cx="210" cy="120" r="20" fill="' + p[2] + '" opacity="0.6"/>',
+          '<path d="M80 160 Q200 70 320 160" stroke="' + p[2] + '" stroke-width="8" fill="none" opacity="0.4"/><circle cx="130" cy="140" r="22" fill="' + p[2] + '" opacity="0.5"/><circle cx="270" cy="140" r="22" fill="' + p[2] + '" opacity="0.5"/>',
+          '<rect x="90" y="80" width="230" height="110" rx="20" fill="' + p[2] + '" opacity="0.2"/><ellipse cx="200" cy="140" rx="70" ry="30" fill="' + p[2] + '" opacity="0.3"/>',
+          '<circle cx="150" cy="100" r="35" fill="' + p[2] + '" opacity="0.3"/><circle cx="260" cy="130" r="45" fill="' + p[2] + '" opacity="0.2"/><circle cx="200" cy="160" r="25" fill="' + p[2] + '" opacity="0.4"/>',
+          '<rect x="120" y="70" width="160" height="100" rx="30" fill="' + p[2] + '" opacity="0.2"/><circle cx="200" cy="120" r="25" fill="' + p[2] + '" opacity="0.5"/>',
+          '<path d="M120 160 L200 70 L280 160 Z" fill="' + p[2] + '" opacity="0.2"/><circle cx="200" cy="140" r="18" fill="' + p[2] + '" opacity="0.6"/>',
+          '<rect x="80" y="100" width="240" height="80" rx="40" fill="' + p[2] + '" opacity="0.2"/><circle cx="160" cy="140" r="20" fill="' + p[2] + '" opacity="0.5"/><circle cx="240" cy="140" r="20" fill="' + p[2] + '" opacity="0.5"/>',
+          '<circle cx="200" cy="120" r="50" fill="' + p[2] + '" opacity="0.15"/><path d="M150 150 Q200 100 250 150" stroke="' + p[2] + '" stroke-width="6" fill="none" opacity="0.4"/>'
+        ];
+        var s = shapes[idx % shapes.length];
+        return '<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="视频封面：' + v.title + '">' +
+          '<rect width="400" height="225" fill="' + p[0] + '"/>' +
+          s +
+          '<text x="200" y="205" text-anchor="middle" font-size="11" fill="#78350f" font-weight="500" opacity="0.7">' + v.tag + ' · ' + v.author + '</text>' +
+          '</svg>';
+      }
+
+      // 渲染创作者
+      function renderCreators() {
+        var grid = document.getElementById('creatorGrid');
+        if (!grid) return;
+        var html = '';
+        creatorData.forEach(function(c, i) {
+          var colors = ['#f59e0b','#d97706','#b45309','#ea580c','#f97316'];
+          html += '<div class="creator-card" data-creator="' + c.name + '">' +
+            '<div class="avatar-lg" style="background:linear-gradient(145deg,' + colors[i % colors.length] + ',#92400e)">' + c.avatar + '</div>' +
+            '<div class="creator-name">' + c.name + '</div>' +
+            '<div class="creator-field">' + c.field + '</div>' +
+            '<div class="creator-stats"><span>' + c.works + ' 作品</span><span>' + c.fans + ' 粉丝</span></div>' +
+            '<div class="creator-bio">' + c.bio + '</div>' +
+          '</div>';
+        });
+        grid.innerHTML = html;
+
+        grid.addEventListener('click', function(e) {
+          var card = e.target.closest('.creator-card');
+          if (card) {
+            var name = card.getAttribute('data-creator');
+            showToast('正在查看「' + name + '」的主页');
+          }
+        });
+      }
+
+      // Toast
+      var toastTimer = null;
+      function showToast(msg) {
+        var toast = document.getElementById('toast');
+        toast.innerText = msg;
+        toast.classList.add('show');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(function() { toast.classList.remove('show'); }, 2200);
+      }
+
+      // 搜索反馈
+      function initSearch() {
+        var input = document.getElementById('searchInput');
+        var btn = document.getElementById('searchBtn');
+        function doSearch() {
+          var val = input.value.trim();
+          if (val) {
+            showToast('正在搜索「' + val + '」相关内容');
+          } else {
+            showToast('请输入关键词后再搜索');
+          }
+        }
+        btn.addEventListener('click', doSearch);
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') doSearch();
+        });
+        input.addEventListener('input', function() {
+          if (input.value.length > 20) {
+            input.value = input.value.slice(0, 20);
+          }
+        });
+      }
+
+      // 移动端导航
+      function initMobileMenu() {
+        var btn = document.getElementById('mobileMenuBtn');
+        var nav = document.getElementById('navLinks');
+        if (btn && nav) {
+          btn.addEventListener('click', function() {
+            nav.classList.toggle('mobile-open');
+          });
+          nav.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+              nav.classList.remove('mobile-open');
+            });
+          });
+        }
+      }
+
+      // 投稿/分享
+      function initButtons() {
+        var upload = document.getElementById('uploadBtn');
+        if (upload) {
+          upload.addEventListener('click', function() {
+            showToast('投稿通道已开启，请发送作品至 official@xiongdijiaotan.com');
+          });
+        }
+        var share = document.getElementById('shareBtn');
+        if (share) {
+          share.addEventListener('click', function() {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText('兄妹蕉谈官方网站 · 温暖相伴记录真实').then(function() {
+                showToast('官网介绍已复制，快去分享吧');
+              }).catch(function() {
+                showToast('分享链接已生成，感谢支持');
+              });
+            } else {
+              showToast('分享链接已生成，感谢支持');
+            }
+          });
+        }
+      }
+
+      // 回顶
+      function initBackTop() {
+        var btn = document.getElementById('backTop');
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 400) {
+            btn.classList.add('visible');
+          } else {
+            btn.classList.remove('visible');
+          }
+        });
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 数字滚动（简单版）
+      function initCounters() {
+        // 首屏数字保持静态，仅作展示
+      }
+
+      // 初始化
+      document.addEventListener('DOMContentLoaded', function() {
+        renderVideos();
+        renderCreators();
+        initSearch();
+        initMobileMenu();
+        initButtons();
+        initBackTop();
+        initCounters();
+      });
+
+    })();
+  </script>
+</body>
+  </html>
